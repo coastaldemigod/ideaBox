@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ideaBox</title>
+    <link rel="stylesheet" href="static/ideastyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">ideaBox</a>
+        <a href="#profile" class="nav-items">Profile</a>
+        <a href="#ideate" class="nav-items">ideate</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="form">
+    <form id="idea-form" action="\api\idea" method="POST">
+        <input type="text" id="name" name="name" placeholder="name"><br>
+        <input type="text" id="domain" name="domain" placeholder="domain"><br>
+        <!-- <input type="text" id="idea" name="idea" placeholder="idea"><br> -->
+        <textarea id="idea" name="idea" placeholder="idea" rows="10"></textarea>
+        <input type="submit" id="submitIdea" value="Post Idea">
+    </form>
+    </div>
+</body>
+<script src="static/ideaapp.js"></script>
+
+</html>
