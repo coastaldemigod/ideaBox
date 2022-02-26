@@ -169,3 +169,35 @@ body {
     }
 
 }
+
+
+#idea-button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#idea-button{
+    margin: 10px 0px;
+    font-family: monospace;
+    padding:10px;
+    /* font-size: larger; */
+    color: #d5fdfd;
+    cursor: pointer;
+    background-color: rgba(205, 14, 62, 0.8);
+    /* background-color: rgba(148, 255, 253, 0.5); */
+    box-shadow: 4px 4px 0 0 #073636;
+    border:0px solid black;
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+#idea-button a{
+    text-decoration: none;
+    color: #23ffff;
+}
+
+#idea-button:active{
+    box-shadow: 2px 2px 0 0 #073636;
+    transform: translate(2px,2px);
+}

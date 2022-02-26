@@ -9,14 +9,14 @@ function myFunction() {
   }
 
   async function populateProfile(){
-    let container=document.getElementById('container');
 
     let res=await fetch('http://localhost:5050/api/profile');
     let data=await res.json();
     console.log(data);
 
-    container.innerHTML=`
-    <div class="profile">
+    let pcon=document.getElementById("profile-container");
+    let idcon=document.getElementById("idea-container");
+    pcon.innerHTML=`
             <div class="profile-name">
             Profile
             </div>
@@ -27,15 +27,15 @@ function myFunction() {
                 ${data.email}                
             </div>
             <div class="ideact">
-                ${data.ideas.length}
+                ${data.ideas.length} ideas posted
             </div>
-        </div>
     `
     
+    let counter=0;
+
     data.ideas.forEach((dt) => {
-        // okc+=content;
-        container.innerHTML+=`
-        <div id="idea-container" class="flex-container-idea">
+        
+        idcon.innerHTML+=`
             <div id="idea-box">
                 <div id="idea-name">
                     ${dt.name}
@@ -46,11 +46,36 @@ function myFunction() {
                 <div id="idea-desc">
                     ${dt.idea}
                 </div>
+                <div id="idea-button-div">
+                <button id="idea-button" value="${counter}" onclick="ideafun(value)">Trash Idea</button>
             </div>
-        </div>
+            </div>
         `
+        counter++;
     });
     
+}
+
+async function ideafun(value){
+    
+    let data={
+        index:value
+    }
+
+    let res=await fetch("/api/burstIdea",{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        body:JSON.stringify(data)
+    })
+
+    if(res.status==200)
+    {
+        location.reload();
+    }
+
 }
 
 window.onload=populateProfile;

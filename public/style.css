@@ -212,11 +212,15 @@ body {
     border:0px;
 }
 
-#email:focus{
+/* #email:focus{
     outline: none;
 }
 
 #password:focus{
+    outline: none;
+} */
+
+.input-style:focus{
     outline: none;
 }
 

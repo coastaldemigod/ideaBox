@@ -138,10 +138,47 @@ apirouter
       console.log(err);
       return res.status(500).json("error on server");
     }
-
-    
 })
+.post('/burstIdea',(req,res)=>{
+    const {index}=req.body;
+    // console.log(req.body);
+    if(!index)
+        return res.status(400).json("invalid operation")
 
+    const token = req.cookies['login_email'];
+
+    if(!token)
+        return res.status(400).json("not logged in");
+
+    try {
+      const decoded = jwt.verify(token, token_key);
+      const user_email = decoded.user_email;
+        let data;
+        let found=false;
+        userData.forEach((dt)=>{
+            if(dt.email==user_email)
+            {
+                if(index<dt.ideas.length)
+                {
+                    dt.ideas.splice(index,1);
+                    found=true;
+                }
+            }
+        })
+
+    if(found)
+    {
+        return res.status(200).json("idea trashed");
+    }
+    
+    return res.status(400).json("invalid user");
+      
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json("error on server");
+    }
+
+})
 
 app.use('/api',apirouter);
 

@@ -131,3 +131,7 @@ body {
     border:0px;
     font-family: monospace;
 }
+
+#submitIdea:focus, #domain:focus, #idea:focus , #name:focus{
+    outline: none;
+}
