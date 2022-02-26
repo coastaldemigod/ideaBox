@@ -105,7 +105,43 @@ body {
     align-items: center;
 }
 
-#email[type=email]{
+.input-style{
+    width: 300px;
+    padding: 12px 20px;
+    background: #FFEAA7;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin: 10px;
+    border:0px;
+    font-family: monospace;
+}
+
+@media screen and (max-width: 600px){
+    .about {
+        /* position: absolute; */
+        width: 80%;
+        height: 200px;
+    }
+    
+    .login {
+        /* position: absolute; */
+        width: 80%;
+        height: auto;
+        padding: 20px;
+    }
+    .input-style{
+        width: 80%;
+        padding: 12px 20px;
+        background: #FFEAA7;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        /* margin: 10px; */
+        border:0px;
+        font-family: monospace;
+    }
+}
+
+/* #email[type=email]{
     width: 300px;
     padding: 12px 20px;
     background: #FFEAA7;
@@ -146,7 +182,7 @@ body {
     margin:10px;
     border:0px;
     font-family: monospace;
-}
+} */
 
 #login{
     width: 100px;

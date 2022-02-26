@@ -13,7 +13,7 @@
 <body>
 
     <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">ideaBox</a>
+        <a href="/" class="active">ideaBox</a>
         <a href="#docs" class="nav-items">Docs</a>
         <a href="#team" class="nav-items">Team</a>
         <a href="#downloads" class="nav-items">Downloads</a>
@@ -30,15 +30,15 @@
         </div>
         <div class="login">
             <form id="login-form" action="\login" method="POST">
-                <input type="email" id="email" name="email" placeholder="email"><br>
-                <input type="password" id="password" name="password" placeholder="password"><br>
+                <input type="email" id="email" class="input-style" name="email" placeholder="email"><br>
+                <input type="password" id="password" class="input-style" name="password" placeholder="password"><br>
                 <input type="submit" id="login" value="Sign in">
             </form>
             <form id="register-form" class="hide" action="\register" method="POST">
-                <input type="text" id="name" name="name" placeholder="full name"><br>
-                <input type="email" id="email" name="email" placeholder="email"><br>
-                <input type="password" id="password" name="password" placeholder="password"><br>
-                <input type="password" id="checkpassword" name="checkpassword" placeholder="retype password"><br>
+                <input type="text" id="name" class="input-style" name="name" placeholder="full name"><br>
+                <input type="email" id="email" class="input-style" name="email" placeholder="email"><br>
+                <input type="password" id="password" class="input-style" name="password" placeholder="password"><br>
+                <input type="password" id="checkpassword" class="input-style" name="checkpassword" placeholder="retype password"><br>
                 <input type="submit" id="register" value="Register">
             </form>
             <div id="go-register" onclick="showRegister()">Don’t have an account ? Sign up</div>

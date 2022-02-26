@@ -48,6 +48,10 @@ app.get("/getIdea",(req,res)=>{
     return res.status(200).sendFile(__dirname+'/pages/addIdea.html');
 })
 
+app.get("/profile",(req,res)=>{
+    return res.status(200).sendFile(__dirname+'/pages/profile.html');
+})
+
 apirouter
 .get('/ideas',(req,res)=>{
 
@@ -95,7 +99,7 @@ apirouter
     })
     if(found)
     {
-        return res.status(200).json('idea added');
+        // return res.status(200).json('idea added');
         return res.status(200).redirect("/");
     }
       
@@ -105,6 +109,37 @@ apirouter
     }
 
     return res.status(400).json("invalid user");
+})
+.get('/profile',(req,res)=>{
+    const token = req.cookies['login_email'];
+
+    if(!token)
+        return res.status(400).json("not logged in");
+
+    try {
+      const decoded = jwt.verify(token, token_key);
+      const user_email = decoded.user_email;
+        let data;
+        let found=false;
+    userData.forEach((dt)=>{
+        if(dt.email==user_email)
+        {
+            found=true;
+            data=dt;
+        }
+    })
+
+    if(found)
+    return res.status(200).json(data);
+    
+    return res.status(400).json("invalid user");
+      
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json("error on server");
+    }
+
+    
 })
 
 
