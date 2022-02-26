@@ -1,0 +1,29 @@
+{
+  "name": "ideabox",
+  "version": "1.0.0",
+  "description": "a place to find ideas and teammates",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coastaldemigod/ideaBox.git"
+  },
+  "author": "Shivansh Agrawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coastaldemigod/ideaBox/issues"
+  },
+  "homepage": "https://github.com/coastaldemigod/ideaBox#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
