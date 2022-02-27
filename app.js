@@ -52,6 +52,10 @@ app.get("/profile",(req,res)=>{
     return res.status(200).sendFile(__dirname+'/pages/profile.html');
 })
 
+app.get("/docs",(req,res)=>{
+    return res.status(200).sendFile(__dirname+'/pages/docs.html');
+})
+
 apirouter
 .get('/ideas',(req,res)=>{
 
