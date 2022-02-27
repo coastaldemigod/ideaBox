@@ -12,7 +12,7 @@ function myFunction() {
 async function populateIdea(){
     let container=document.getElementById('idea-container');
 
-    let res=await fetch('http://localhost:5050/api/ideas');
+    let res=await fetch('/api/ideas');
     let data=await res.json();
     console.log(data);
 

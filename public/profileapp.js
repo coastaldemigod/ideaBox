@@ -10,7 +10,7 @@ function myFunction() {
 
   async function populateProfile(){
 
-    let res=await fetch('http://localhost:5050/api/profile');
+    let res=await fetch('/api/profile');
     let data=await res.json();
     console.log(data);
 
