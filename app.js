@@ -20,11 +20,6 @@ app.use(cookieParser());
 
 app.get("/",(req,res)=>{
 
-    const token = req.cookies['login_email'];
-  
-    if (!token) {
-        return res.status(200).sendFile(__dirname+'/pages/index.html');
-    }
     try {
       const decoded = jwt.verify(token, token_key);
       const user_email = decoded.user_email;
@@ -44,15 +39,15 @@ app.get("/",(req,res)=>{
     return res.status(200).sendFile(__dirname+'/pages/index.html');
 })
 
-app.get("/getIdea",(req,res)=>{
+app.get("/getIdeaTest",(req,res)=>{
     return res.status(200).sendFile(__dirname+'/pages/addIdea.html');
 })
 
-app.get("/profile",(req,res)=>{
+app.get("/profileTest",(req,res)=>{
     return res.status(200).sendFile(__dirname+'/pages/profile.html');
 })
 
-app.get("/docs",(req,res)=>{
+app.get("/docsTest",(req,res)=>{
     return res.status(200).sendFile(__dirname+'/pages/docs.html');
 })
 
@@ -212,14 +207,8 @@ app.post('/login',(req,res)=>{
     return res.status(400).json('invalid credentials');
 });
 
-app.post('/register',(req,res)=>{
+app.post('/Testregister',(req,res)=>{
     const {name,email,password,checkpassword}=req.body;
-
-    if(!name || !email || !password || !checkpassword)
-        return res.status(400).json("data missing");
-
-    if(password!=checkpassword)
-        return res.status(400).json("passwords do not match");
 
     let found=false;
 
